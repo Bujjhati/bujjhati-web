@@ -64,7 +64,9 @@ const {
       text-rendering: optimizeLegibility;
     }
     .background--custom {
-      background-color: #FFFFFF;
+      background: linear-gradient(45deg, #50ACA2, #E97F4E, #000000, #2A0000);
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease infinite;
       width: 100vw;
       height: 100vh;
       position: fixed;
@@ -72,6 +74,12 @@ const {
       top: 0;
       left: 0;
       overflow: hidden;
+    }
+    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     canvas#canvas {
       z-index: -1;
@@ -116,6 +124,14 @@ const {
           var gradient = new Gradient();
           gradient.initGradient("#canvas");
           console.log('Gradient initialized successfully');
+          
+          // Hide CSS gradient when JS gradient loads successfully
+          const backgroundDiv = document.querySelector('.background--custom');
+          if (backgroundDiv) {
+            backgroundDiv.style.background = 'transparent';
+            console.log('CSS gradient hidden, JS gradient active');
+          }
+          
           return true;
         } catch (error) {
           console.error('Error initializing gradient:', error);
