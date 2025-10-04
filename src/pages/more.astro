@@ -1,30 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-
-<Layout title="Bujjhati | More">
-  <!-- Navigation -->
+<Layout title="Bujjhati | More Coming Soon">
   <div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navigation w-nav">
     <div class="navigation-container">
       <nav role="navigation" class="nav-menu w-nav-menu">
         <a href="/#music-section" class="navigation-link w-inline-block">
           <div class="navigation-link-text">MUSIC</div>
         </a>
-        <a href="/contact" class="navigation-link w-inline-block">
+        <a href="/#section-contact" class="navigation-link w-inline-block">
           <div class="navigation-link-text">CONTACT</div>
         </a>
       </nav>
-      <a href="/" class="logo w-inline-block">
-        <img src="/images/LOGO-MAIN-BUJJ.png" sizes="(max-width: 1038px) 100vw, 1038px" srcset="/images/LOGO-MAIN-BUJJ-p-500.png 500w, /images/LOGO-MAIN-BUJJ.png 1038w" alt="" class="image-logo">
-      </a>
+      <a href="/" class="logo w-inline-block"><img src="/images/LOGO-MAIN-BUJJ.png" sizes="(max-width: 1038px) 100vw, 1038px" srcset="/images/LOGO-MAIN-BUJJ-p-500.png 500w, /images/LOGO-MAIN-BUJJ.png 1038w" alt="" class="image-logo"></a>
       <nav role="navigation" class="nav-menu w-nav-menu">
-        <a href="/music" class="navigation-link _2 w-inline-block">
+        <a href="/#music-section" class="navigation-link _2 w-inline-block">
           <div class="navigation-link-text">MUSIC</div>
         </a>
-        <a href="/contact" class="navigation-link _2 w-inline-block">
+        <a href="/#section-contact" class="navigation-link _2 w-inline-block">
           <div class="navigation-link-text">CONTACT</div>
         </a>
-        <a href="/projects" class="navigation-link w-inline-block">
+        <a href="/#Projects-section" class="navigation-link w-inline-block">
           <div class="navigation-link-text">PROJECTS</div>
         </a>
         <a href="/more" aria-current="page" class="navigation-link w-inline-block w--current">
@@ -36,61 +32,16 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </div>
-
-  <!-- More Page Content -->
-  <section class="section-2">
-    <div class="div-block-2">
-      <img src="/images/LOGO-MAIN-ICON-BUJJ.png" loading="lazy" sizes="(max-width: 479px) 151px, (max-width: 767px) 164px, (max-width: 991px) 210px, 229px" srcset="/images/LOGO-MAIN-ICON-BUJJ-p-500.png 500w, /images/LOGO-MAIN-ICON-BUJJ.png 1049w" alt="" class="image">
-    </div>
-    <div class="div-block-3">
-      <div class="paragraph">
-        <span class="text-span">बुध्यते . to awake</span> | additional content and information.<br>
-      </div>
-      <div class="div-block-5">
-        <a href="/" class="link-button w-button">home</a>
-        <a href="/contact" class="link-button w-button">CONTACT</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- More Content Section -->
-  <section class="section-links">
-    <div class="title-div">
-      <div class="h1">MORE</div>
-    </div>
-    <div class="div-block-6">
-      <div class="paragraph _2">
-        Additional <span class="text-span-2"><em class="italic-text">content</em></span> and <span class="text-span-3"><strong class="bold-text">information</strong></span> about bujjhati's journey and creative process.<br><br>
-        Stay connected for updates on new releases, events, and collaborations.
-      </div>
-    </div>
-  </section>
-
-  <!-- Social Media Links -->
-  <section class="media-links-sec">
-    <div>
-      <a href="https://www.instagram.com/bujjhati/" target="_blank" class="media-links-block w-inline-block">
-        <img src="/images/IG-ICON.png" loading="lazy" alt="">
-      </a>
-      <a href="https://www.youtube.com/watch?v=ftgjn0phJGg" target="_blank" class="media-links-block w-inline-block">
-        <img src="/images/YT-ICON.png" loading="lazy" alt="">
-      </a>
-      <a href="https://open.spotify.com/artist/0eu2zBr1x09LRp0AbgLgHY?si=Jf85JA5BSeS7bBace5h-sQ" target="_blank" class="media-links-block w-inline-block">
-        <img src="/images/SP-ICON.png" loading="lazy" alt="">
-      </a>
-      <a href="https://soundcloud.com/bujjhati" target="_blank" class="media-links-block w-inline-block">
-        <img src="/images/SC-ICON.png" loading="lazy" alt="">
-      </a>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="section-contact" class="section-b">
-    <div class="div-block-12">
-      <div class="contact-title">CONTACT FOR BOOKING AND BUSINESS</div>
-    </div>
-    <a href="mailto:music@bujjhati.com" class="email-text w-inline-block">
-      <div class="email">☛ music@bujjhati.com ☚</div>
-    </a>
-  </section>
+  <div>
+    <div class="coming-soon-text">COMING<br>SOON</div>
+  </div>
 </Layout>
+<style>
+  .body-5 {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
