@@ -2,54 +2,49 @@
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="Bujjhati | More Coming Soon">
-  <div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navigation w-nav">
-    <div class="navigation-container">
-      <nav role="navigation" class="nav-menu w-nav-menu">
-        <a href="/#music-section" class="navigation-link w-inline-block">
-          <div class="navigation-link-text">MUSIC</div>
-        </a>
-        <a href="/contact" class="navigation-link w-inline-block">
-          <div class="navigation-link-text">CONTACT</div>
-        </a>
-      </nav>
-      <a href="/" class="logo w-inline-block"><img src="/images/LOGO-MAIN-BUJJ.png" sizes="(max-width: 1038px) 100vw, 1038px" srcset="/images/LOGO-MAIN-BUJJ-p-500.png 500w, /images/LOGO-MAIN-BUJJ.png 1038w" alt="" class="image-logo"></a>
-      <nav role="navigation" class="nav-menu w-nav-menu">
-        <a href="/#music-section" class="navigation-link _2 w-inline-block">
-          <div class="navigation-link-text">MUSIC</div>
-        </a>
-        <a href="/contact" class="navigation-link _2 w-inline-block">
-          <div class="navigation-link-text">CONTACT</div>
-        </a>
-        <a href="/#Projects-section" class="navigation-link w-inline-block">
-          <div class="navigation-link-text">PROJECTS</div>
-        </a>
-        <a href="/more" aria-current="page" class="navigation-link w-inline-block w--current">
-          <div class="navigation-link-text">MORE</div>
-        </a>
-      </nav>
-      <div class="menu-button w-nav-button">
-        <div class="lottie-eye" data-w-id="4129dfe2-b844-85c5-c568-2cd95c757b3d" data-animation-type="lottie" data-src="/documents/eye.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="3" data-duration="3"></div>
-      </div>
+    <div class="page-wrapper">
+        <div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navigation w-nav">
+            <div class="navigation-container">
+            <nav role="navigation" class="nav-menu w-nav-menu">
+                <a href="/#music-section" class="navigation-link w-inline-block">
+                <div class="navigation-link-text">MUSIC</div>
+                </a>
+                <a href="/contact" class="navigation-link w-inline-block">
+                <div class="navigation-link-text">CONTACT</div>
+                </a>
+            </nav>
+            <a href="/" class="logo w-inline-block"><img src="/images/LOGO-MAIN-BUJJ.png" sizes="(max-width: 1038px) 100vw, 1038px" srcset="/images/LOGO-MAIN-BUJJ-p-500.png 500w, /images/LOGO-MAIN-BUJJ.png 1038w" alt="" class="image-logo"></a>
+            <nav role="navigation" class="nav-menu w-nav-menu">
+                <a href="/#music-section" class="navigation-link _2 w-inline-block">
+                <div class="navigation-link-text">MUSIC</div>
+                </a>
+                <a href="/contact" class="navigation-link _2 w-inline-block">
+                <div class="navigation-link-text">CONTACT</div>
+                </a>
+                <a href="/#Projects-section" class="navigation-link w-inline-block">
+                <div class="navigation-link-text">PROJECTS</div>
+                </a>
+                <a href="/more" aria-current="page" class="navigation-link w-inline-block w--current">
+                <div class="navigation-link-text">MORE</div>
+                </a>
+            </nav>
+            <div class="menu-button w-nav-button">
+                <div class="lottie-eye" data-w-id="4129dfe2-b844-85c5-c568-2cd95c757b3d" data-animation-type="lottie" data-src="/documents/eye.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="3" data-duration="3"></div>
+            </div>
+            </div>
+        </div>
+        <div>
+            <div class="coming-soon-text">COMING<br>SOON</div>
+        </div>
     </div>
-  </div>
-  <div class="centered-content">
-    <div class="coming-soon-text">COMING<br>SOON</div>
-  </div>
 </Layout>
 <style>
-  .body-5 {
-    background-color: #1a1a1a;
+  .page-wrapper {
     display: flex;
-    height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  .centered-content {
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
   }
 </style>
