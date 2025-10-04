@@ -101,10 +101,13 @@ const {
   </div>
   
   <!-- Gradient Script -->
-  <script src="/js/minigl.js" is:inline></script>
+  <script src="/js/minigl.js?v=1" is:inline></script>
   <script>
     // Wait for the script to load and DOM to be ready
     function initGradient() {
+      console.log('Attempting to initialize gradient...');
+      console.log('Gradient object available:', typeof Gradient !== 'undefined');
+      
       // @ts-ignore
       if (typeof Gradient !== 'undefined') {
         try {
@@ -132,6 +135,12 @@ const {
     window.addEventListener('load', function() {
       setTimeout(initGradient, 100);
     });
+    
+    // Force retry after 2 seconds as final fallback
+    setTimeout(function() {
+      console.log('Final gradient initialization attempt...');
+      initGradient();
+    }, 2000);
   </script>
 </body>
 </html>
