@@ -68,14 +68,15 @@ const {
       text-rendering: optimizeLegibility;
     }
     .background--custom {
-      background-color: #000;
+      background: linear-gradient(45deg, #50ACA2, #E97F4E, #000000, #2A0000);
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease infinite;
       width: 100vw;
       height: 100vh;
-      position: fixed;
+      position: absolute;
       z-index: -2;
       top: 0;
       left: 0;
-      overflow: hidden;
     }
     
     @keyframes gradientShift {
