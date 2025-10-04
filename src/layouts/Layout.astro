@@ -64,13 +64,21 @@ const {
       text-rendering: optimizeLegibility;
     }
     .background--custom {
-      background-color: #FFFFFF;
+      background: linear-gradient(45deg, #50ACA2, #E97F4E, #000000, #2A0000);
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease infinite;
       width: 100vw;
       height: 100vh;
       position: absolute;
       z-index: -2;
       top: 0;
       left: 0;
+    }
+    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     canvas#canvas {
       z-index: -1;
@@ -101,9 +109,9 @@ const {
   </div>
   
   <!-- Gradient Script -->
-  <script src="/js/minigl.js?v=1" is:inline></script>
+  <script src="/js/minigl.js?v=2" is:inline></script>
   <script>
-    // Wait for the script to load and DOM to be ready
+    // Enhanced gradient initialization for deployment compatibility
     function initGradient() {
       console.log('Attempting to initialize gradient...');
       console.log('Gradient object available:', typeof Gradient !== 'undefined');
@@ -115,32 +123,75 @@ const {
           var gradient = new Gradient();
           gradient.initGradient("#canvas");
           console.log('Gradient initialized successfully');
+          return true;
         } catch (error) {
           console.error('Error initializing gradient:', error);
+          return false;
         }
       } else {
         console.log('Gradient not available, retrying...');
-        setTimeout(initGradient, 200);
+        return false;
       }
     }
     
-    // Try multiple initialization methods
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initGradient);
-    } else {
-      initGradient();
+    // Multiple initialization strategies for deployment compatibility
+    function tryInitGradient() {
+      let attempts = 0;
+      const maxAttempts = 10;
+      
+      function attempt() {
+        attempts++;
+        console.log(`Gradient initialization attempt ${attempts}/${maxAttempts}`);
+        
+        if (initGradient()) {
+          console.log('Gradient successfully initialized!');
+          return;
+        }
+        
+        if (attempts < maxAttempts) {
+          setTimeout(attempt, 300 * attempts); // Increasing delay
+        } else {
+          console.warn('Failed to initialize gradient after all attempts');
+          // Fallback: try to load script dynamically
+          loadGradientScript();
+        }
+      }
+      
+      attempt();
     }
     
-    // Also try after window load as fallback
+    // Dynamic script loading as fallback
+    function loadGradientScript() {
+      console.log('Attempting dynamic script loading...');
+      const script = document.createElement('script');
+      script.src = '/js/minigl.js?v=2';
+      script.onload = function() {
+        console.log('Dynamic script loaded, retrying gradient init...');
+        setTimeout(initGradient, 100);
+      };
+      script.onerror = function() {
+        console.error('Failed to load gradient script dynamically');
+      };
+      document.head.appendChild(script);
+    }
+    
+    // Start initialization
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', tryInitGradient);
+    } else {
+      tryInitGradient();
+    }
+    
+    // Additional fallbacks
     window.addEventListener('load', function() {
-      setTimeout(initGradient, 100);
+      setTimeout(tryInitGradient, 100);
     });
     
-    // Force retry after 2 seconds as final fallback
+    // Final fallback after 3 seconds
     setTimeout(function() {
       console.log('Final gradient initialization attempt...');
-      initGradient();
-    }, 2000);
+      tryInitGradient();
+    }, 3000);
   </script>
 </body>
 </html>
