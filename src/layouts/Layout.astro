@@ -57,13 +57,21 @@ const {
       text-rendering: optimizeLegibility;
     }
     .background--custom {
-      background-color: #FFFFFF;
+      background: linear-gradient(45deg, #50ACA2, #E97F4E, #000000, #2A0000);
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease infinite;
       width: 100vw;
       height: 100vh;
       position: absolute;
       z-index: -2;
       top: 0;
       left: 0;
+    }
+    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     canvas#canvas {
       z-index: -1;
@@ -87,19 +95,21 @@ const {
     <canvas id="canvas"></canvas>
   </div>
   <script src="/js/minigl.js" is:inline></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // @ts-ignore
-      if (typeof Gradient === 'function') {
-        try {
-          // @ts-ignore
-          var gradient = new Gradient();
-          gradient.initGradient("#canvas");
-        } catch (e) {
-          console.error("Error initializing gradient:", e);
+  <script is:inline>
+    // @ts-ignore
+    if (typeof Gradient === 'function') {
+      try {
+        // @ts-ignore
+        var gradient = new Gradient();
+        gradient.initGradient("#canvas");
+        const backgroundDiv = document.querySelector('.background--custom');
+        if (backgroundDiv) {
+          backgroundDiv.style.background = 'transparent';
         }
+      } catch (e) {
+        console.error("Error initializing gradient:", e);
       }
-    });
+    }
   </script>
 </body>
 </html>
