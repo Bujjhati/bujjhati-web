@@ -56,8 +56,11 @@ const {
   <script type="text/javascript">!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.agent='plwebflow';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '589657956397951');fbq('track', 'PageView');</script>
   
   <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
     body {
-      position: relative;
       -moz-font-feature-settings: "liga" on;
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
@@ -65,12 +68,10 @@ const {
       text-rendering: optimizeLegibility;
     }
     .background--custom {
-      background: linear-gradient(45deg, #50ACA2, #E97F4E, #000000, #2A0000);
-      background-size: 400% 400%;
-      animation: gradientShift 8s ease infinite;
-      width: 100%;
-      height: 100%;
-      position: absolute;
+      background-color: #000;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
       z-index: -2;
       top: 0;
       left: 0;
