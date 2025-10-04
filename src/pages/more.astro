@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Bujjhati | More Coming Soon">
+<Layout title="Bujjhati | More Coming Soon" bodyClass="body-dark">
   <div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navigation w-nav">
     <div class="navigation-container">
       <nav role="navigation" class="nav-menu w-nav-menu">
@@ -32,24 +32,18 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </div>
-  <div class="centered-content">
+  <div class="page-wrapper">
     <div class="coming-soon-text">COMING<br>SOON</div>
   </div>
 </Layout>
 <style>
-  .body-5 {
-    background-color: #1a1a1a;
+  .page-wrapper {
     display: flex;
-    height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  .centered-content {
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    min-height: calc(100vh - 90px); /* Adjust for nav height */
+    padding-top: 90px;
+    box-sizing: border-box;
   }
 </style>
