@@ -1,14 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Bujjhati | More Coming Soon">
+<Layout title="Bujjhati | Bookings & Contact">
   <div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navigation w-nav">
     <div class="navigation-container">
       <nav role="navigation" class="nav-menu w-nav-menu">
         <a href="/#music-section" class="navigation-link w-inline-block">
           <div class="navigation-link-text">MUSIC</div>
         </a>
-        <a href="/contact" class="navigation-link w-inline-block">
+        <a href="/contact" aria-current="page" class="navigation-link w-inline-block w--current">
           <div class="navigation-link-text">CONTACT</div>
         </a>
       </nav>
@@ -17,13 +17,13 @@ import Layout from '../layouts/Layout.astro';
         <a href="/#music-section" class="navigation-link _2 w-inline-block">
           <div class="navigation-link-text">MUSIC</div>
         </a>
-        <a href="/contact" class="navigation-link _2 w-inline-block">
+        <a href="/contact" aria-current="page" class="navigation-link _2 w-inline-block w--current">
           <div class="navigation-link-text">CONTACT</div>
         </a>
         <a href="/#Projects-section" class="navigation-link w-inline-block">
           <div class="navigation-link-text">PROJECTS</div>
         </a>
-        <a href="/more" aria-current="page" class="navigation-link w-inline-block w--current">
+        <a href="/more" class="navigation-link w-inline-block">
           <div class="navigation-link-text">MORE</div>
         </a>
       </nav>
@@ -32,24 +32,27 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </div>
-  <div class="centered-content">
-    <div class="coming-soon-text">COMING<br>SOON</div>
-  </div>
+  <section class="section-5">
+    <div class="lottie-contact-div">
+      <div data-w-id="4297b69c-f931-6853-e402-187bd48cfd57" data-animation-type="lottie" data-src="/documents/Abstract-lottie.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="4" data-duration="0"></div>
+    </div>
+    <div>
+      <div class="div-block-12 _2">
+        <div class="contact-title _2">CONTACT FOR BOOKING AND BUISNESS</div>
+      </div>
+    </div>
+    <a href="mailto:music@bujjhati.com" class="email-text _2 w-inline-block">
+      <div class="email">☛ music@bujjhati.com ☚</div>
+    </a>
+    <div class="links-contact-button-div">
+      <a href="https://1drv.ms/f/s!AtAQGskiu3tehe8lvaChK4EYlXY4WA?e=UrV5tv" target="_blank" class="booking-link-button w-button">PRESS KIT</a>
+      <a href="https://1drv.ms/f/s!AtAQGskiu3tem6tAFQDktrPLbgcfiw?e=r3V5bF" target="_blank" class="booking-link-button rider w-button">RIDER &amp; HOSPITALITY</a>
+      <a href="#" class="booking-link-button _2 w-button">TECHNICAL RIDER</a>
+    </div>
+  </section>
 </Layout>
 <style>
-  .body-5 {
+  .body-3 {
     background-color: #1a1a1a;
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
-  .centered-content {
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-</style>
+</style> 
